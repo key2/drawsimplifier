@@ -1,0 +1,7 @@
+# Draw Simplifier Dependencies
+# Generated from pyproject.toml for Render.com deployment
+
+ezdxf>=1.0.0
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6

@@ -1,0 +1,30 @@
+[project]
+name = "drawsimplifier"
+version = "0.1.0"
+description = "Simplify DXF and SVG files by converting line segments to continuous polylines"
+authors = [
+    {name = "LambdaConcept", email = "contact@lambdaconcept.com"},
+]
+dependencies = [
+    "ezdxf>=1.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.23.0",
+    "python-multipart>=0.0.6",
+]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+drawsimplifier = "drawsimplifier.app:main"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+serve = "uvicorn drawsimplifier.app:app --reload --host 0.0.0.0 --port 8000"
+dev = "uvicorn drawsimplifier.app:app --reload"
