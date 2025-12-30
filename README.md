@@ -2,6 +2,8 @@
 
 A web application that simplifies DXF and SVG files by converting individual line segments into continuous polylines/paths.
 
+**🚀 Live Demo:** [https://drawsimplifier.onrender.com/](https://drawsimplifier.onrender.com/)
+
 ## Features
 
 - **Upload DXF or SVG files** via a modern drag-and-drop web interface
