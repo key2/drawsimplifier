@@ -90,6 +90,39 @@ pdm run pytest
 pdm run dev
 ```
 
+## Deployment on Render.com
+
+This project is configured for easy deployment on [Render.com](https://render.com).
+
+### Option 1: Deploy with Blueprint (Recommended)
+
+1. Push this repository to GitHub/GitLab
+2. Go to [Render Dashboard](https://dashboard.render.com)
+3. Click "New" → "Blueprint"
+4. Connect your repository
+5. Render will automatically detect the `render.yaml` and configure the service
+
+### Option 2: Manual Deployment
+
+1. Push this repository to GitHub/GitLab
+2. Go to [Render Dashboard](https://dashboard.render.com)
+3. Click "New" → "Web Service"
+4. Connect your repository
+5. Configure the service:
+   - **Runtime**: Python
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn drawsimplifier.app:app --host 0.0.0.0 --port $PORT`
+   - **Environment Variables**:
+     - `PYTHON_VERSION`: `3.13.0`
+     - `PYTHONPATH`: `src`
+
+### Environment Variables
+
+| Variable | Value | Description |
+|----------|-------|-------------|
+| `PYTHON_VERSION` | `3.13.0` | Python version to use |
+| `PYTHONPATH` | `src` | Path to source code |
+
 ## License
 
 MIT License
