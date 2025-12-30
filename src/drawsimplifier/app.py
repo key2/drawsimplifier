@@ -467,6 +467,7 @@ HTML_TEMPLATE = """
 
 
 @app.get("/", response_class=HTMLResponse)
+@app.head("/")
 async def index():
     """Serve the main upload page."""
     return HTML_TEMPLATE
